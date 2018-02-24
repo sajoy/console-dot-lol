@@ -6,12 +6,9 @@
 
 */
 
-console.lol = function (text) {
+console.lol = () => {
     const emojis = ['🤣','😂','🙊','😹'];
-    const randomEmoji = emojis.random();
-    const texts = [...arguments];
-
-    console.log(`${randomEmoji} <( ${texts.join()}!! Hahaha!)`);
+    console.log(`%c${emojis.random()}`, 'font-size: 2rem;');
 };
 
 
