@@ -11,24 +11,19 @@ console.lol = function (text) {
     const randomEmoji = emojis.random();
     const texts = [...arguments];
 
-    console.log(texts)
     console.log(`${randomEmoji} <( ${texts.join()}!! Hahaha!)`);
 };
 
 
-/*
-
-    every thirteen words should be a rainbow progression
-    roygbivibgyo
-
-*/
 console.rainbow = function () {
 
     const args = [...arguments];
-    args.forEach(arg => {
+    for (let arg of args) {
 
-        if (typeof arg !== 'string' && Array.isArray(arg)) {
-           arg = `[${arg.join()}]`;
+        if (typeof arg !== 'string' && Array.isArray(arg)) arg = `[${arg.join()}]`;
+        if (typeof arg === 'object') {
+            console.log(`🌈️`,arg);
+            continue;
         }
 
         const rainbowArg = colorString(arg);
@@ -41,7 +36,7 @@ console.rainbow = function () {
         const p = 'color: purple;';
 
         console.log(`☁️%c${rainbowArg}☁️`, r, o, y, g, b, i, p, i, b, g, y, o, r);
-    });
+    };
 
     function colorString (str) {
         const txtLength = str.length;
