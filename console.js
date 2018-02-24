@@ -1,14 +1,18 @@
+'use strict';
+
 /*
 
     Console methods to make working and debugging a little brighter.
 
 */
 
-console.lol = txt => {
+console.lol = function (text) {
     const emojis = ['🤣','😂','🙊','😹'];
     const randomEmoji = emojis.random();
-    
-    console.log(`${randomEmoji} <( ${txt}!! Hahaha!)`);
+    const texts = [...arguments];
+
+    console.log(texts)
+    console.log(`${randomEmoji} <( ${texts.join()}!! Hahaha!)`);
 };
 
 
@@ -18,31 +22,43 @@ console.lol = txt => {
     roygbivibgyo
 
 */
-console.rainbow = txt => {
-  
-    const txtLength = txt.length;
-    const numColors = 13;
-    const charsPerColor  = Math.round(txtLength / numColors);
+console.rainbow = function () {
 
-    const txtArray = [];
-    let startingI = 0, endingI = charsPerColor;
-    while (txtArray.length < 13) {
-        txtArray.push(txt.substr(startingI,endingI));
-        startingI = txtArray.length * charsPerColor;
-        if (txtArray.length === 12 && startingI < txt.length) endingI = txt.length;
+    const args = [...arguments];
+    args.forEach(arg => {
+
+        if (typeof arg !== 'string' && Array.isArray(arg)) {
+           arg = `[${arg.join()}]`;
+        }
+
+        const rainbowArg = colorString(arg);
+        const r = 'color: red;';
+        const o = 'color: orange;';
+        const y = 'color: yellow;';
+        const g = 'color: green;';
+        const b = 'color: blue;';
+        const i = 'color: indigo;';
+        const p = 'color: purple;';
+
+        console.log(`☁️%c${rainbowArg}☁️`, r, o, y, g, b, i, p, i, b, g, y, o, r);
+    });
+
+    function colorString (str) {
+        const txtLength = str.length;
+        const numColors = 13;
+        const charsPerColor  = Math.round(txtLength / numColors);
+
+        const txtArray = [];
+        let startingI = 0, endingI = charsPerColor;
+        while (txtArray.length < 13) {
+            txtArray.push(str.substr(startingI,endingI));
+            startingI = txtArray.length * charsPerColor;
+            if (txtArray.length === 12 && startingI < str.length) endingI = str.length;
+        }
+
+        const rainbowStr = txtArray.join('%c');
+        return rainbowStr;
     }
-
-    const rainbow = txtArray.join('%c');
-
-    const r = 'color: red;';
-    const o = 'color: orange;';
-    const y = 'color: yellow;';
-    const g = 'color: green;';
-    const b = 'color: blue;';
-    const i = 'color: indigo;';
-    const p = 'color: purple;';
-
-    console.log(`☁️%c${rainbow}☁️`, r, o, y, g, b, i, p, i, b, g, y, o, r);
 };
 
 
