@@ -4,11 +4,9 @@
 
 */
 
-console.lol = txt => {
+console.lol = () => {
     const emojis = ['🤣','😂','🙊','😹'];
-    const randomEmoji = emojis.random();
-    
-    console.log(`${randomEmoji} <( ${txt}!! Hahaha!)`);
+    console.log(`%c${emojis.random()}`, 'font-size: 2rem;');
 };
 
 
