@@ -66,12 +66,19 @@ console.block = function () {
 };
 
 
+/*
+
+    manageArgs helper function to loop through args and call approrpiate cb.
+
+*/
+
+
 function manageArgs (givenArguments, callbacks) {
     let argumentsArray = [...givenArguments];
     if (argumentsArray.length > 1) console.group('' + argumentsArray[0]);
     for (let arg of argumentsArray) {
         
-        if (typeof arg === 'string') callbacks.string(arg);
+        if (typeof arg === 'string' || typeof arg === 'number') callbacks.string(arg += '');
         
         if (Array.isArray(arg)) { 
             arg = `[${arg.join()}]`;
