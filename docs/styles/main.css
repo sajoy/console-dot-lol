@@ -1,11 +1,21 @@
 html, body {
     width: 100%;
     height: 100%;
+    min-width: 400px;
+    font-family: 'PT Sans Narrow', sans-serif;
 }
 
 :root {
     --surround-padding: 5%;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* a {
+    font-family: 'PT Sans Narrow', sans-serif;
+} */
 
 header {
     padding: var(--surround-padding);
@@ -23,6 +33,12 @@ header h1 {
 header figure {
     text-align: center;
 }
+
+header figure img {
+    max-width: 100%;
+}
+
+/*  nav  */
 
 nav {
     position: absolute;
@@ -43,13 +59,40 @@ nav ul {
 
 nav li {
     margin: 0 2%;
-    background-color: blue;
     border: solid 5px black;
-    padding: 1% 2%;
+    padding: 15px;
+    line-height: 1.5rem;
 }
+
+.home { background-color: white; }
+.home a { font-size: 1.5rem; }
+.download { background-color: lightgreen; }
+.contribute { background-color: lightgoldenrodyellow; }
+.docs { background-color: deepskyblue; }
 
 nav a {
     text-decoration: none;
-    color: white;
+    color: black;
     text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+/*  main  */
+
+main {
+    padding: var(--surround-padding);
+}
+
+main section {
+    width: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    margin: 0 auto;
+}
+
+main ul {
+    list-style-type: square;
+    padding-left: 150px;
 }
