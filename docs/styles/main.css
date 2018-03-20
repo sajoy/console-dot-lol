@@ -17,24 +17,25 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'PT Sans Narrow', sans-serif;
 } */
 
-header {
+header,
+.landing-splash {
     padding: var(--surround-padding);
     background-color: black;
     position: relative;
     box-sizing: border-box;
 }
 
-header h1 {
+.landing-splash h1 {
     margin: 0;
     margin-bottom: var(--surround-padding);
     text-align: center;
 }
 
-header figure {
+.landing-splash figure {
     text-align: center;
 }
 
-header figure img {
+.landing-splash figure img {
     max-width: 100%;
 }
 
@@ -92,7 +93,74 @@ main section {
     margin: 0 auto;
 }
 
+main article header {
+    padding: 2%;
+    color: white;
+}
+
+main article header h1 {
+    text-align: left;
+}
+
 main ul {
     list-style-type: square;
     padding-left: 150px;
+}
+
+main aside {
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: var(--surround-padding);
+}
+
+main aside .download-options {
+    font-size: 2rem;
+    padding-left: 150px;
+}
+
+.download-options li{
+    line-height: 3.5rem;
+}
+
+main .option {
+    margin-top: 15%;
+}
+
+.step {
+    margin-top: 5%;
+}
+
+.step div {
+    display: flex;
+    /* justify-content: space-bet; */
+}
+
+.step figure {
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.step img {
+    width: 100%;
+}
+
+.step ul {
+    padding: 0;
+}
+
+.step li {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.step li pre {
+    display: inline-block;
+    margin: 0;
+    background-color: lightgray;
+    padding: 2px 5px;
+    font-size: 1.2rem;
+}
+
+.step li ul {
+    padding-left: 50px;
 }
