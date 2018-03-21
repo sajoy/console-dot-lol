@@ -146,11 +146,22 @@ main .option {
 
 .step ul {
     padding: 0;
+    list-style-type: none;
 }
 
 .step li {
     font-size: 1.5rem;
     line-height: 2rem;
+}
+
+input[type="checkbox"] { margin: 0 10px 0 0; }
+input[type="checkbox"]:checked {
+    opacity: .5;
+}
+
+input[type="checkbox"]:checked + span {
+    opacity: .5;
+    text-decoration: line-through;
 }
 
 .step li pre {
