@@ -104,8 +104,8 @@ console.lol = (isJoke) => {
             "The git-git-slide is fun to dance to, until it isn't",
             "In case of fire: git commit, git push, leave the building",
             "Don't forgit to bring a towel",
-        ]
-        console.log(`${jokes.random()}`)
+        ];
+        console.log(`${jokes.random()}`);
     }
     const emojis = ['🤣','😂','🙊','😹'];
     console.log(`%c${emojis.random()}`, 'font-size: 2rem;');
