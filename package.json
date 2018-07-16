@@ -1,6 +1,6 @@
 {
   "name": "console-dot-lol",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Console methods to make the browser console a little more fun.",
   "browser": "index.js",
   "files": [
