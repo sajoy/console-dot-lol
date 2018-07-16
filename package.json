@@ -1,0 +1,30 @@
+{
+  "name": "console-dot-lol",
+  "version": "1.0.0",
+  "description": "Console methods to make the browser console a little more fun.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup src/main.js --file index.js --format umd --name 'console'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sajoy/console-dot-lol.git"
+  },
+  "keywords": [
+    "browser",
+    "console"
+  ],
+  "author": "Sarah Joy Calpo <sjpc.dev@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sajoy/console-dot-lol/issues"
+  },
+  "homepage": "https://github.com/sajoy/console-dot-lol#readme",
+  "devDependencies": {
+    "rollup": "^0.62.0"
+  }
+}
