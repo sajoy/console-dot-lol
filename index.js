@@ -10,10 +10,6 @@
 
     */
 
-    console.fake = () => {
-        console.log('jk');
-    };
-
     console.lol = (isJoke) => {
         if(isJoke){
             const jokes = [
