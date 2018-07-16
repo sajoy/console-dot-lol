@@ -6,6 +6,10 @@
 
 */
 
+console.fake = () => {
+    console.log('jk');
+}
+
 console.lol = (isJoke) => {
     if(isJoke){
         const jokes = [
@@ -203,3 +207,5 @@ function manageArgs (givenArguments, callbacks) {
 Array.prototype.random = function () {
     return this[Math.floor(Math.random() * this.length)];
 };
+
+export default console;
