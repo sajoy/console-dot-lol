@@ -4,6 +4,8 @@ Console methods to make working and debugging a little brighter.
 
 ## Usage
 As of now, your options are:
+- Include via CDN using UNPKG: 
+    `<script src="https://unpkg.com/console-dot-lol@1.0.1/index.js"></script>`
 - Copy and paste the methods you'd like from `console.js` directly into your code (or your browser's console).
 - Go to the [raw version of console.js](https://raw.githubusercontent.com/sajoy/console-dot-lol/master/console.js), right click and hit `Save as` to download it to your computer, then attach the file to your HTML with a `<script>` tag.
 
