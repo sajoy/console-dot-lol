@@ -122,14 +122,14 @@ console.rainbow = function () {
             const b = 'color: blue;';
             const i = 'color: indigo;';
             const p = 'color: purple;';
-        
+
             console.log(`☁️%c${rainbowArg}☁️`, r, o, y, g, b, i, p, i, b, g, y, o, r);
 
             function colorString (str) {
                 const txtLength = str.length;
                 const numColors = 13;
                 const charsPerColor  = Math.round(txtLength / numColors);
-        
+
                 const txtArray = [];
                 let startingI = 0, endingI = charsPerColor;
                 while (txtArray.length < 13) {
@@ -137,7 +137,7 @@ console.rainbow = function () {
                     startingI = txtArray.length * charsPerColor;
                     if (txtArray.length === 12 && startingI < str.length) endingI = str.length;
                 }
-        
+
                 const rainbowStr = txtArray.join('%c');
                 return rainbowStr;
             }
@@ -165,10 +165,38 @@ console.block = function () {
     manageArgs(arguments, blockify);
 };
 
+/*
+
+    Method returns spooky answers for strings, objects and boolean.
+
+*/
+
+
+console.boo = function (args) {
+    const ghost = '👻';
+    const styles = 'font-weight: bold;';
+    if (args) {
+        const spookify = {
+            string: (txt) => {
+                console.log(`%c${ghost} Boo! ${txt}`, styles);
+            },
+            object: (txt) => {
+                console.log(ghost, txt, ghost);
+            },
+            boolean: (bool) => {
+                console.log(`%c${ghost} Your Boo!lean is...${bool}`, styles);
+            }
+        };
+        manageArgs(arguments, spookify);
+    } else {
+        console.log(`%c${ghost} Boo!`, styles);
+    }
+};
+
 
 /*
 
-    manageArgs helper function to loop through args and call approrpiate cb.
+    ManageArgs helper function to loop through args and call approrpiate cb.
 
 */
 
@@ -177,16 +205,20 @@ function manageArgs (givenArguments, callbacks) {
     let argumentsArray = [...givenArguments];
     if (argumentsArray.length > 1) console.group('' + argumentsArray[0]);
     for (let arg of argumentsArray) {
-        
+
         if (typeof arg === 'string' || typeof arg === 'number') callbacks.string(arg += '');
-        
-        if (Array.isArray(arg)) { 
+
+        if (Array.isArray(arg)) {
             arg = `[${arg.join()}]`;
             callbacks.string(arg);
         }
-        
+
         if (typeof arg === 'object') {
             callbacks.object(arg);
+        }
+
+        if (typeof arg == 'boolean') {
+            callbacks.boolean(arg);
         }
 
     }
